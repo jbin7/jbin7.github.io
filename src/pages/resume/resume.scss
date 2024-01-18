@@ -1,0 +1,138 @@
+.resume {
+
+  padding: 1rem 1.5rem 10rem 1.5rem;
+
+  .container {
+    width: 100%;
+    max-width: 50rem;
+    margin: auto;
+  }
+  
+  h1 {    
+    font-size: 3rem;
+    font-weight: 600;
+    position: relative;
+    animation: fadein 2s;
+    // -moz-animation: fadein 3s; /* Firefox */
+    // -webkit-animation: fadein 3s; /* Safari and Chrome */
+    // -o-animation: fadein 3s; /* Opera */  
+    background: linear-gradient(90deg, rgba(26,125,172,1) 0%, rgba(255,188,0,1) 100%);
+    background-clip:text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;    
+    margin-bottom: 4rem;  
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    box-shadow: inset 0 -0.4rem 0 #ffbc00;
+    display: inline-block;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;           
+    border-left: #ffbc00 solid 0.3rem;
+    padding-left: 0.3rem;
+    margin-bottom: 1rem; 
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    line-height: 2.5rem;   
+    margin-bottom: 1rem; 
+  }  
+
+  h5 {
+    
+  }
+
+  p {
+    font-size: 0.9rem;
+    // margin: 0.5rem 0 0.5rem 0;
+  }  
+
+  p.big {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 4rem;
+  }
+
+  section {
+    .item {        
+      // border-bottom: solid 1px #c9c9c9;
+      p {
+        max-width: 31rem;
+      }
+    }
+  }  
+
+
+  hr {
+    
+  }
+
+
+  .period {
+    font-size: 0.8rem;
+  }
+
+  .role {
+    font-size: 0.8rem;
+  }
+  
+
+  
+  @keyframes fadein {
+    from {
+        opacity: 0;
+        top: 30px;
+    }
+    to {
+        opacity: 1;
+        top:0px;
+    }
+  }
+  
+}
+
+@media ( min-width: 800px ) {
+  .resume {
+    padding: 2rem 2rem 10rem 2rem;
+
+    h1 {
+      font-size: 5rem;
+    }
+
+    h2 {
+      font-size: 3rem;
+      font-weight: 600;
+      // margin: 0.5rem 0 0.5rem 0;
+    }
+    
+    h3 {
+      font-size: 2rem;       
+    }
+  
+    h4 {
+      font-size: 1.5rem;      
+    }    
+
+    p.big {
+      font-size: 1.8rem;
+    }
+
+    section {
+      .item {        
+        display: flex;        
+        .left {
+          width: 15rem;
+        }
+      }
+    }
+  }
+}
+
+
+
