@@ -26,7 +26,7 @@
   --maxWidth-md: 28rem;
   --maxWidth-lg: 32rem;
   --maxWidth-xl: 36rem;
-  --maxWidth-2xl: 42rem;
+  --maxWidth-2xl: 64rem;
   --maxWidth-3xl: 48rem;
   --maxWidth-4xl: 56rem;
   --maxWidth-full: "100%";
@@ -77,12 +77,48 @@
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
-  --color-primary: #005b99;
+  --color-primary: #ffbc00;
   --color-text: #2e353f;
   --color-text-light: #4f5969;
-  --color-heading: #1a202c;
+  /* --color-heading: #1a202c; */
   --color-heading-black: black;
   --color-accent: #d1dce5;
+}
+
+
+:root[color-theme='light'] {
+  --color-signature: #ffbc00;
+
+  --color-background: #fff;
+
+  --color-text: #000;
+  --color-heading: #000;
+
+  --color-header: #FDFDFD;
+  --color-side-1: #F0F0F0;
+  --color-side-2: #F7F7F8;  
+
+  --color-container: #FBFBFB;  
+
+  --color-border: #EBEBEB;
+
+}
+
+:root[color-theme='dark'] {
+  --color-signature: #ffbc00;
+
+  --color-background: #303136;
+
+  --color-text: #D0D2D3;
+  --color-heading: #FFF;
+
+  --color-header: #33363D;
+  --color-side-1: #171717;
+  --color-side-2: #1F2024;
+
+  --color-container: #28292D;
+
+  --color-border: #26272B;
 }
 
 /* HTML elements */
@@ -99,12 +135,18 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Noto Sans KR', sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text)
 }
 
 body {
   font-family: 'Noto Sans KR', sans-serif;
   font-size: var(--fontSize-1);
-  color: var(--color-text);
+  color: var(--color-text)
+}
+
+.container {
+  background-color: var(--color-container);  
 }
 
 footer {
@@ -132,6 +174,7 @@ h6 {
   letter-spacing: -0.025em;
 }
 
+h1,
 h2,
 h3,
 h4,
@@ -144,7 +187,7 @@ h6 {
 h1 {
   font-weight: var(--fontWeight-black);
   font-size: var(--fontSize-6);
-  color: var(--color-heading-black);
+  color: var(--color-heading);
 }
 
 h2 {
@@ -267,15 +310,18 @@ a:focus {
 .global-wrapper {
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
-  padding: var(--spacing-10) var(--spacing-5);
+  /* padding: var(--spacing-10) var(--spacing-5); */
+  padding-top: 3rem;
+  background-color: var(--color-container);
 }
 
 .global-wrapper[data-is-root-path="true"] .bio {
   margin-bottom: var(--spacing-20);
+  
 }
 
 .global-header {
-  margin-bottom: var(--spacing-12);
+  margin-bottom: var(--spacing-12);  
 }
 
 .main-heading {

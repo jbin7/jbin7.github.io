@@ -1,11 +1,13 @@
 .resume {
 
   padding: 1rem 1.5rem 10rem 1.5rem;
+  background-color: var(--color-container);
 
   .container {
     width: 100%;
     max-width: 50rem;
     margin: auto;
+    
   }
   
   h1 {    
@@ -120,7 +122,7 @@
     }    
 
     p.big {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
     }
 
     section {

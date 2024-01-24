@@ -6,9 +6,10 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const BlogIndex = ({ data, location }) => {
+  
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes  
-
+    
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
@@ -25,6 +26,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
 
+      <div class="container">
       <Bio />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
@@ -58,6 +60,8 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </ol>
+      </div>
+
     </Layout>
   )
 }
