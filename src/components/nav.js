@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 
@@ -7,27 +7,61 @@ import "./nav.scss"
 const Nav = ({ location, title, children }) => {
 
   const [colorMode, setColorMode] = useState(localStorage.getItem('color-theme'))
-  const [isOpenMenu, setIsOpenMenue] = useState(true)
-  const [isTransition, setIsTransition] = useState(false)
-  
-  
+  const [isOpenMenu, setIsOpenMenu] = useState(false)
+  const [isTransition, setIsTransition] = useState(false)  
+
+
   const handleColor = () => {
     if (colorMode === 'dark') {      
       setColorMode('light')
       localStorage.setItem('color-theme', 'light')
       document.documentElement.setAttribute('color-theme', 'light')
+      
+      document.documentElement.classList.add('fadein')
+      window.setTimeout(()=> {
+        document.documentElement.classList.remove('fadein')
+      },500)
     } else {      
       setColorMode('dark')
       localStorage.setItem('color-theme', 'dark')
       document.documentElement.setAttribute('color-theme', 'dark')
+
+      document.documentElement.classList.add('fadein')
+      window.setTimeout(()=> {
+        document.documentElement.classList.remove('fadein')
+      },500)      
     }
     
   }
 
   const handleMenu = () => {
     setIsTransition(true)
-    setIsOpenMenue(!isOpenMenu)    
+    setIsOpenMenu(!isOpenMenu)    
   }
+
+  const handleResize = ()=> {
+    if(window.innerWidth < 800) {
+      setIsOpenMenu(false)
+    } else {
+      setIsOpenMenu(true)
+    }
+    
+  }
+
+  useEffect(() => {
+
+    if(window.innerWidth < 800) {      
+      setIsOpenMenu(false)
+    } else {
+      setIsOpenMenu(true) 
+    }     
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    }
+  }, [])
 
   return (
     <nav className="nav-wrapper">
@@ -90,7 +124,12 @@ const Nav = ({ location, title, children }) => {
                 <span>다크테마</span>
               </button>
             )}            
-
+            <hr/>
+            <div className="copyright">
+            © {new Date().getFullYear()}, Built with
+            {` `}
+            <a href="https://www.gatsbyjs.com">Gatsby</a>              
+            </div>
              
           </div>
                   

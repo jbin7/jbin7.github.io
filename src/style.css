@@ -150,7 +150,7 @@ footer {
 }
 
 hr {
-  background: var(--color-accent);
+  background-color: var(--color-signature);
   height: 1px;
   border: 0;
 }
@@ -319,12 +319,21 @@ button {
 /* Custom classes */
 
 .global-wrapper {
+  /* margin: var(--spacing-0) auto; */
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
   /* padding: var(--spacing-10) var(--spacing-5); */
   padding-top: 3rem;
   background-color: var(--color-container);
 }
+
+@media ( min-width: 800px ) { 
+  .global-wrapper {
+    margin: 0 auto 0 17.5rem;
+  }
+  
+}
+
 
 .global-wrapper[data-is-root-path="true"] .bio {
   margin-bottom: var(--spacing-20);
@@ -411,4 +420,19 @@ button {
   ol {
     list-style-position: inside;
   }
+}
+
+.fadein {
+  animation: color-mode-fadein 0.5s;
+}
+
+
+@keyframes color-mode-fadein {
+	from {
+		opacity: 0;
+	}
+	
+	to {
+		opacity: 1;
+	}
 }

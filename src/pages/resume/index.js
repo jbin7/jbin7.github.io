@@ -107,7 +107,7 @@ const Index = ({ data, location }) => {
                     Docker, AWS, Git
                     </h4>
                   <p>
-                    
+                    AWS EC2, S3, RDS 사용 경험 및 Docker 작성 및 배포 경험이 있습니다.
                   </p>                
                 </div>
               
