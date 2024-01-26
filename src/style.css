@@ -11,12 +11,8 @@
 
 @font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
 
-@font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
 
 
 :root {
@@ -91,7 +87,7 @@
 
   --color-background: #fff;
 
-  --color-text: #000;
+  --color-text: #464646;
   --color-heading: #000;
 
   --color-header: #FDFDFD;
@@ -140,7 +136,7 @@ html {
 }
 
 body {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'pretendard', sans-serif;
   font-size: var(--fontSize-1);
   color: var(--color-text)
 }
@@ -303,6 +299,21 @@ a {
 a:hover,
 a:focus {
   text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.button {
+  background-color: var(--color-side-2);
+  padding: 0.3rem 1rem 0.3rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 /* Custom classes */
