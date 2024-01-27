@@ -8,7 +8,8 @@ const Nav = ({ location, title, children }) => {
 
   const [colorMode, setColorMode] = useState(localStorage.getItem('color-theme'))
   const [isOpenMenu, setIsOpenMenu] = useState(false)
-  const [isTransition, setIsTransition] = useState(false)  
+  const [isTransition, setIsTransition] = useState(false)    
+
 
 
   const handleColor = () => {
@@ -35,25 +36,25 @@ const Nav = ({ location, title, children }) => {
   }
 
   const handleMenu = () => {
-    setIsTransition(true)
-    setIsOpenMenu(!isOpenMenu)    
+    setIsTransition(true)    
+    setIsOpenMenu(!isOpenMenu)            
   }
 
   const handleResize = ()=> {
     if(window.innerWidth < 800) {
-      setIsOpenMenu(false)
+      setIsOpenMenu(false)      
     } else {
-      setIsOpenMenu(true)
+      setIsOpenMenu(true)      
     }
-    
   }
+
 
   useEffect(() => {
 
-    if(window.innerWidth < 800) {      
+    if(window.innerWidth < 800) {        
       setIsOpenMenu(false)
-    } else {
-      setIsOpenMenu(true) 
+    } else {      
+      setIsOpenMenu(true)       
     }     
 
     window.addEventListener('resize', handleResize);
@@ -76,12 +77,15 @@ const Nav = ({ location, title, children }) => {
               <button onClick={handleMenu}>
                 <StaticImage className="menu-icon" src="../images/icons/menu_dark_icon.svg" alt="icon"/>
               </button>     
-            )}    
+            )}                
 
      
         </div>
         <div className='header-center'>
           {/* <div className="title-text">Jbin</div> */}
+          <Link to="/">
+            <StaticImage className="logo-image" src="../images/gatsby-icon.png" alt="logo-image"/>
+          </Link>
         </div>
         <div className='header-right'>
 
@@ -89,7 +93,12 @@ const Nav = ({ location, title, children }) => {
 
      
       </div>
-      <div className={`sidebar-wrapper ${isOpenMenu && isTransition ? 'open' : ''}${!isOpenMenu  ? 'close' : ''}`}>
+      <div className={`sidebar-wrapper 
+        ${isOpenMenu ? 'open' : ''}
+        ${!isOpenMenu  ? 'close' : ''}
+        ${isOpenMenu && isTransition ? 'open-transition' : ''}
+        ${!isOpenMenu && isTransition  ? 'close-transition' : ''}`}
+        >
         <div className="side-1">
           <ul>
           <li>
@@ -98,14 +107,14 @@ const Nav = ({ location, title, children }) => {
               </Link>
             </li>            
             <li>
-              <Link to="https://glowing-sawine-7a9024.netlify.app/" target="_blank" rel="noopener noreferrer">
+              <a href="https://glowing-sawine-7a9024.netlify.app/" target="_blank" rel="noopener noreferrer">
                 <StaticImage className="profile-img" src="../images/jbin_interactive_profile.png" alt="Profile picture"/>
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="https://github.com/jbin7" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/jbin7" target="_blank" rel="noopener noreferrer">
                 <StaticImage className="profile-img" src="../images/github.png" alt="Profile picture"/>
-              </Link>
+              </a>
             </li>            
           </ul>
         </div>
@@ -134,7 +143,9 @@ const Nav = ({ location, title, children }) => {
           </div>
                   
         </div>
-      </div>
+        
+        {isOpenMenu && <button onClick={handleMenu} className='other'> </button>}
+      </div>      
     </nav>
   )
 }

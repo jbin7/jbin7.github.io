@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
 
 import Nav from "../components/nav"
 
@@ -15,33 +14,35 @@ const Layout = ({ location, title, children }) => {
     document.documentElement.setAttribute('color-theme', localStorage.getItem('color-theme'))
   }  
     
-  let header
+  // let header
+
+  const handleDataFromChild = (data) => {
+    console.log("부모에서 받은 데이터:", data);
+    // 부모 컴포넌트에서 데이터 처리 로직을 수행
+  }  
 
   if (isRootPath) {
-    header = (
-      <h1 className="main-heading">
-        <Link to="/">{title}</Link>
-      </h1>
-    )
+    // header = (
+    //   <h1 className="main-heading">
+    //     <Link to="/">{title}</Link>
+    //   </h1>
+    // )
   } else {
-    header = (
-      <Link className="header-link-home" to="/">
-        {title}
-      </Link>
-    )
+    // header = (
+    //   <Link className="header-link-home" to="/">
+    //     {title}
+    //   </Link>
+    // )
   }
 
   return (
     <div>
-    <Nav/>
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
-      
-      <header className="global-header">{header}</header>      
-      <main>{children}</main>
-      <footer>
-
-      </footer>
-    </div>
+    <Nav sendDataToParent={handleDataFromChild}/>
+      <div className="global-wrapper" data-is-root-path={isRootPath}>
+        {/* <header className="global-header">{header}</header>    */}
+        <main>{children}</main>
+        {/* <footer></footer>      */}
+      </div>
     </div>
 
   )
