@@ -54,7 +54,7 @@ const Nav = ({ location, title, children }) => {
     if(window.innerWidth < 800) {        
       setIsOpenMenu(false)
     } else {      
-      setIsOpenMenu(true)       
+      setIsOpenMenu(false)       
     }     
 
     window.addEventListener('resize', handleResize);

@@ -332,7 +332,7 @@ button {
 
 @media ( min-width: 800px ) { 
   .global-wrapper {
-    margin: 0 auto 0 calc(var(--side1-width) + var(--side2-width));
+    
   }
   
 }
