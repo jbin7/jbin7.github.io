@@ -24,7 +24,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
 
-      <div>
+      <div className="container">
         <div className="blog-area">
           <ol style={{ listStyle: `none` }}>
             {posts.map(post => {

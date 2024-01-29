@@ -74,7 +74,7 @@ const Nav = ({ location, title, children }) => {
   }, [])
 
   return (
-    <nav className="nav-wrapper">
+    <div className="nav-wrapper">
       <div className="nav-header">
         <div className="header-left">      
             {colorMode === "dark" ? (
@@ -116,13 +116,8 @@ const Nav = ({ location, title, children }) => {
         ${isOpenSidebar && isSidebarTransition ? 'open-transition' : ''}
         ${!isOpenSidebar && isSidebarTransition  ? 'close-transition' : ''}`}
         >
-        <div className="side-1">
-          <ul>
-          <li>
-              <Link to="/resume" target="_blank" rel="noopener noreferrer">
-                <StaticImage className="profile-img" src="../images/resume.png" alt="Profile picture"/>
-              </Link>
-            </li>            
+        <nav className="side-1">
+          <ul>         
             <li>
               <a href="https://glowing-sawine-7a9024.netlify.app/" target="_blank" rel="noopener noreferrer">
                 <StaticImage className="profile-img" src="../images/jbin_interactive_profile.png" alt="Profile picture"/>
@@ -134,8 +129,29 @@ const Nav = ({ location, title, children }) => {
               </a>
             </li>            
           </ul>
-        </div>
+        </nav>
         <div className="side-2">
+          <ul className='category-list'>
+            <li>
+              <Link to="/"><h3>전체 글</h3></Link>
+            </li>
+            <li>
+              <div className='group-label'>category group1</div>
+              <ul>
+                <li><Link to="/">sub-category1</Link></li>
+                <li><Link to="/">sub-category2</Link></li>
+              </ul>
+            </li>
+            <li>
+              <div className='group-label'>카테고리 그룹2</div>
+              <ul>
+                <li><Link to="/">서브-카테고리1</Link></li>
+                <li><Link to="/">서브-카테고리2</Link></li>
+              </ul>
+            </li>   
+            <li>
+            </li>         
+          </ul>
           <div className='footer'>
 
             {colorMode === "dark" ? (
@@ -152,7 +168,7 @@ const Nav = ({ location, title, children }) => {
             )}            
             <hr/>
             <div className="copyright">
-            © {new Date().getFullYear()}, Built with
+            © {new Date().getFullYear()}, Jbin Built with
             {` `}
             <a href="https://www.gatsbyjs.com">Gatsby</a>              
             </div>
@@ -170,10 +186,22 @@ const Nav = ({ location, title, children }) => {
         ${isOpenMenu && isMenuTransition ? 'open-transition' : ''}
         ${!isOpenMenu && isMenuTransition  ? 'close-transition' : ''}`} 
         onClick={handleMenu}>
-      네비메뉴
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Blog</Link>
+            </li>            
+            <li>
+              <Link to="/portfolio">Portfolio</Link>
+            </li>
+            <li>
+              <Link to="/resume">Resume</Link>
+            </li>            
+          </ul>
+        </nav>
       </div>    
 
-    </nav>
+    </div>
   )
 }
 

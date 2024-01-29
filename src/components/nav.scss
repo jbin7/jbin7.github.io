@@ -83,16 +83,51 @@
 
   .side-2 {
     display: flex;
+    flex-direction: column;
     width: var(--side2-width);
     height: 100vh;
+
 
     background-color: var(--color-side-2);
     border-right: solid 1px var(--color-border);
     z-index: 2001;
 
+    .category-list {
+      padding: 0rem 0.7rem 0rem 0.7rem;
+      a {
+        display: flex;
+        text-decoration: none;
+        color: var(--color-text);        
+        font-weight: 600;
+        
+        padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+        margin: 0rem 0rem 0rem 0rem;
+        
+        &:hover {
+          border-radius: 4px;      
+          background-color: var(--color-focus);          
+        }        
+      }   
+      h3 {
+        margin: 0rem;
+      }
+      .group-label {
+        padding: 0rem 0.3rem 0rem 0.3rem;
+        font-size: 0.8rem;
+        color: var(--color-text-sub);
+        font-weight: 300;
+      }
+      ul {
+        margin: 0rem;
+        li {
+          margin-bottom: 0;
+        }
+      }
+    }
+
     .footer {
       width: 100%;
-      padding: 4rem 1rem 0rem 1rem;
+      padding: 0rem 1rem 0rem 1rem;
       // position: absolute;
       bottom:4rem;
       .copyright {
