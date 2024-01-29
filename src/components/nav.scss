@@ -11,10 +11,11 @@
     width: 100%;
     height: var(--nav-height);
     background-color: var(--color-header);  
+    // background-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0 1px 0 rgba(0,0,0,.05), 0 1px 3px rgba(0, 0, 0, 0.07);
     z-index: 2001;
     display: flex; justify-content: space-between; align-items: center;
-    padding: 0 1rem 0 1rem;
+    padding: 0 0.8rem 0 0.8rem;
 
     .title-text {
       font-size: 1.5rem;
@@ -26,7 +27,7 @@
 
     .menu-icon {
       cursor: pointer;
-      width: 1.2rem;      
+      width: 1rem;      
     }
 
     .logo-image {
@@ -36,7 +37,7 @@
 
   }
 
-  .sidebar-wrapper {
+  .nav-sidebar {
     position: fixed;
     display: flex;    
     margin-top: var(--nav-height);
@@ -50,10 +51,10 @@
       left: calc(0rem - var(--side1-width) - var(--side2-width));
     }
     &.open-transition {      
-      animation: open 0.2s; 
+      animation: open-sidebar 0.2s; 
     }
     &.close-transition {            
-      animation: close 0.2s;
+      animation: close-sidebar 0.2s;
     }
 
   }   
@@ -121,6 +122,35 @@
     position: fixed;
     z-index: 1999;    
   }
+  
+
+  .nav-menu {
+    // margin-top: var(--nav-height);
+    width: 100%;
+    height: 100vh;
+    z-index: 2099;
+    position: fixed;
+    // right: -100%;
+    // margin-top: var(--nav-height);
+    background-color: rgb(0, 0, 0, 0.7);
+    display: flex; align-items: center; justify-content: center;
+
+    &.open {
+      top: 0rem;      
+    }
+
+    &.close {
+      top: -100%;      
+    }
+
+    &.open-transition {      
+      animation: open-menu 0.6s;
+    }
+    &.close-transition {            
+      animation: close-menu 0.6s;
+    }    
+
+  }
 
 
 
@@ -134,10 +164,10 @@
   }
 }
 
-@media ( min-width: 800px ) {
+@media ( min-width: 1080px ) {
   .nav-wrapper {
     width: calc(var(--side1-width) + var(--side2-width));
-    .sidebar-wrapper { 
+    .nav-sidebar { 
       width: calc(var(--side1-width) + var(--side2-width));
       .other {
         display: none;
@@ -147,7 +177,7 @@
 }
 
 
-@keyframes open {
+@keyframes open-sidebar {
 	from {
 		left: calc(0rem - var(--side1-width) - var(--side2-width));
 	}
@@ -157,13 +187,33 @@
 	}
 }
 
-@keyframes close {
+@keyframes close-sidebar {
 	from {
     left: 0rem;
 	}
 	
 	to {
     left: calc(0rem - var(--side1-width) - var(--side2-width));
+	}
+}
+
+@keyframes open-menu {
+	from {
+		top: -100%;
+	}
+	
+	to {
+		top: 0rem;
+	}
+}
+
+@keyframes close-menu {
+	from {
+    top: 0rem;
+	}
+	
+	to {
+    top: -100%;
 	}
 }
 

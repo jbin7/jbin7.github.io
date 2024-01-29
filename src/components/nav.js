@@ -8,7 +8,9 @@ const Nav = ({ location, title, children }) => {
 
   const [colorMode, setColorMode] = useState(localStorage.getItem('color-theme'))
   const [isOpenMenu, setIsOpenMenu] = useState(false)
-  const [isTransition, setIsTransition] = useState(false)    
+  const [isOpenSidebar, setIsSidebar] = useState(false)
+  const [isMenuTransition, setIsMenuTransition] = useState(false)
+  const [isSidebarTransition, setIsSidebarTransition] = useState(false)
 
 
 
@@ -35,26 +37,33 @@ const Nav = ({ location, title, children }) => {
     
   }
 
-  const handleMenu = () => {
-    setIsTransition(true)    
-    setIsOpenMenu(!isOpenMenu)            
+  const handleSidebar = () => {
+    setIsSidebarTransition(true)    
+    setIsSidebar(!isOpenSidebar)            
   }
 
+  const handleMenu = () => {
+    setIsMenuTransition(true)    
+    setIsOpenMenu(!isOpenMenu)            
+  }  
+
   const handleResize = ()=> {
-    if(window.innerWidth < 800) {
-      setIsOpenMenu(false)      
+    if(window.innerWidth < 1660) {
+      setIsSidebarTransition(true)
+      setIsSidebar(false)
     } else {
-      setIsOpenMenu(true)      
+      setIsSidebarTransition(true)
+      setIsSidebar(true)      
     }
   }
 
 
   useEffect(() => {
 
-    if(window.innerWidth < 800) {        
-      setIsOpenMenu(false)
+    if(window.innerWidth < 1660) {        
+      setIsSidebar(false)
     } else {      
-      setIsOpenMenu(false)       
+      setIsSidebar(false)       
     }     
 
     window.addEventListener('resize', handleResize);
@@ -68,36 +77,44 @@ const Nav = ({ location, title, children }) => {
     <nav className="nav-wrapper">
       <div className="nav-header">
         <div className="header-left">      
-
             {colorMode === "dark" ? (
-              <button onClick={handleMenu}>
+              <button onClick={handleSidebar}>
                 <StaticImage className="menu-icon" src="../images/icons/menu_light_icon.svg" alt="icon"/>
               </button>      
             ) : (
-              <button onClick={handleMenu}>
+              <button onClick={handleSidebar}>
                 <StaticImage className="menu-icon" src="../images/icons/menu_dark_icon.svg" alt="icon"/>
               </button>     
             )}                
-
-     
         </div>
+
         <div className='header-center'>
           {/* <div className="title-text">Jbin</div> */}
           <Link to="/">
             <StaticImage className="logo-image" src="../images/gatsby-icon.png" alt="logo-image"/>
           </Link>
         </div>
-        <div className='header-right'>
 
+
+        <div className='header-right'>
+          {colorMode === "dark" ? (
+            <button onClick={handleMenu}>
+              <StaticImage className="menu-icon" src="../images/icons/menu_light_icon.svg" alt="icon"/>
+            </button>      
+          ) : (
+            <button onClick={handleMenu}>
+              <StaticImage className="menu-icon" src="../images/icons/menu_dark_icon.svg" alt="icon"/>
+            </button>     
+          )}   
         </div>
 
      
       </div>
-      <div className={`sidebar-wrapper 
-        ${isOpenMenu ? 'open' : ''}
-        ${!isOpenMenu  ? 'close' : ''}
-        ${isOpenMenu && isTransition ? 'open-transition' : ''}
-        ${!isOpenMenu && isTransition  ? 'close-transition' : ''}`}
+      <div className={`nav-sidebar
+        ${isOpenSidebar ? 'open' : ''}
+        ${!isOpenSidebar  ? 'close' : ''}
+        ${isOpenSidebar && isSidebarTransition ? 'open-transition' : ''}
+        ${!isOpenSidebar && isSidebarTransition  ? 'close-transition' : ''}`}
         >
         <div className="side-1">
           <ul>
@@ -144,8 +161,18 @@ const Nav = ({ location, title, children }) => {
                   
         </div>
         
-        {isOpenMenu && <button onClick={handleMenu} className='other'> </button>}
-      </div>      
+        {isOpenSidebar && <button onClick={handleSidebar} className='other'> </button>}
+      </div>
+
+      <div className={`nav-menu         
+        ${isOpenMenu ? 'open' : ''}  
+        ${!isOpenMenu  ? 'close' : ''}
+        ${isOpenMenu && isMenuTransition ? 'open-transition' : ''}
+        ${!isOpenMenu && isMenuTransition  ? 'close-transition' : ''}`} 
+        onClick={handleMenu}>
+      네비메뉴
+      </div>    
+
     </nav>
   )
 }

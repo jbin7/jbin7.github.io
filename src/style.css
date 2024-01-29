@@ -146,6 +146,7 @@ body {
 
 .container {
   background-color: var(--color-container);  
+  margin: ;
 }
 
 footer {
@@ -330,7 +331,7 @@ button {
   background-color: var(--color-background);
 }
 
-@media ( min-width: 800px ) { 
+@media ( min-width: 1080px ) { 
   .global-wrapper {
     
   }
