@@ -1,17 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from "gatsby"
+import React, { useEffect } from 'react';
 
 import Layout from "../../components/layout"
-import Seo from "../../components/seo"
+
+import Intro from "./intro"
 
 import "./portfolio.scss"
 
 const PortfolioIndex = ({ data, location }) => {
+
+  useEffect(() => {
+
+    return () => {
+      
+    }
+  }, [])   
   
   return (
     <Layout location={location}>
-      <div>
-        portfolio
+      <div className='portfolio'>
+        {/* <iframe src="https://glowing-sawine-7a9024.netlify.app/" allowfullscreen></iframe> */}
+        <Intro/>
       </div>
     </Layout>
   )

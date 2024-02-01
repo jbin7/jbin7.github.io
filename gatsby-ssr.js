@@ -7,6 +7,15 @@
 /**
  * @type {import('gatsby').GatsbySSR['onRenderBody']}
  */
-exports.onRenderBody = ({ setHtmlAttributes }) => {
+
+import React from 'react';
+import GlobalStateProvider from './src/context/GlobalStateProvider';
+
+export const wrapRootElement = ({ element }) => (
+  <GlobalStateProvider>{element}</GlobalStateProvider>
+)
+
+export const onRenderBody = ({ setHtmlAttributes }) => {
   setHtmlAttributes({ lang: `ko` })
 }
+

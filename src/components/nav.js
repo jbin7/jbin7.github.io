@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
+
+import GlobalStateContext from '../context/GlobalStateContext';
 
 import "./nav.scss"
 
 const Nav = ({ location, title, children }) => {
 
   const [colorMode, setColorMode] = useState(localStorage.getItem('color-theme'))
+  const { globalState, updateGlobalState } = useContext(GlobalStateContext);
   const [isOpenMenu, setIsOpenMenu] = useState(false)
-  const [isOpenSidebar, setIsSidebar] = useState(false)
   const [isMenuTransition, setIsMenuTransition] = useState(false)
-  const [isSidebarTransition, setIsSidebarTransition] = useState(false)
-
+  
+  
 
 
   const handleColor = () => {
@@ -37,9 +39,8 @@ const Nav = ({ location, title, children }) => {
     
   }
 
-  const handleSidebar = () => {
-    setIsSidebarTransition(true)    
-    setIsSidebar(!isOpenSidebar)            
+  const handleSidebar = () => {        
+    updateGlobalState({isOpenSidebar: !globalState.isOpenSidebar, isSidebarTransition: true})   
   }
 
   const handleMenu = () => {
@@ -47,24 +48,19 @@ const Nav = ({ location, title, children }) => {
     setIsOpenMenu(!isOpenMenu)            
   }  
 
-  const handleResize = ()=> {
-    if(window.innerWidth < 1660) {
-      setIsSidebarTransition(true)
-      setIsSidebar(false)
-    } else {
-      setIsSidebarTransition(true)
-      setIsSidebar(true)      
-    }
-  }
+
 
 
   useEffect(() => {
-
-    if(window.innerWidth < 1660) {        
-      setIsSidebar(false)
-    } else {      
-      setIsSidebar(false)       
-    }     
+    
+    const handleResize = ()=> {
+      if(window.innerWidth < 1200) {      
+        updateGlobalState({isOpenSidebar: false})   
+      } else {      
+        updateGlobalState({isOpenSidebar: true})   
+      }
+    }    
+    
 
     window.addEventListener('resize', handleResize);
 
@@ -111,10 +107,9 @@ const Nav = ({ location, title, children }) => {
      
       </div>
       <div className={`nav-sidebar
-        ${isOpenSidebar ? 'open' : ''}
-        ${!isOpenSidebar  ? 'close' : ''}
-        ${isOpenSidebar && isSidebarTransition ? 'open-transition' : ''}
-        ${!isOpenSidebar && isSidebarTransition  ? 'close-transition' : ''}`}
+        ${globalState.isOpenSidebar ? 'open' : 'close'}        
+        ${globalState.isOpenSidebar && globalState.isSidebarTransition ? 'open-transition' : ''}
+        ${!globalState.isOpenSidebar && globalState.isSidebarTransition  ? 'close-transition' : ''}`}
         >
         <nav className="side-1">
           <ul>         
@@ -177,12 +172,11 @@ const Nav = ({ location, title, children }) => {
                   
         </div>
         
-        {isOpenSidebar && <button onClick={handleSidebar} className='other'> </button>}
+        {globalState.isOpenSidebar && <button onClick={handleSidebar} className='other'> </button>}
       </div>
 
       <div className={`nav-menu         
-        ${isOpenMenu ? 'open' : ''}  
-        ${!isOpenMenu  ? 'close' : ''}
+        ${isOpenMenu ? 'open' : 'close'}        
         ${isOpenMenu && isMenuTransition ? 'open-transition' : ''}
         ${!isOpenMenu && isMenuTransition  ? 'close-transition' : ''}`} 
         onClick={handleMenu}>

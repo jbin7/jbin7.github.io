@@ -13,6 +13,8 @@
 
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
 
 
 :root {
@@ -337,11 +339,48 @@ button {
 }
 
 @media ( min-width: 1080px ) { 
-  .global-wrapper {
-    
+  .global-wrapper {    
+
+    &.side-open {
+      margin-left: calc(0rem + var(--side1-width) + var(--side2-width));
+      
+      
+    }
+
+    &.side-close {
+      margin-left: 0rem;
+      
+    }
+
+    &.open-transition {
+      animation: slide-wrapper 0.2s;
+    }
+
+    &.close-transition {
+      animation: slide-wrapper2 0.2s;
+    }
+  }
+}
+
+@keyframes slide-wrapper {
+  from {
+    margin-left: 0rem;
   }
   
-}
+  to {
+    margin-left: calc(0rem + var(--side1-width) + var(--side2-width));
+  }
+}  
+
+@keyframes slide-wrapper2 {
+  from {
+    margin-left: calc(0rem + var(--side1-width) + var(--side2-width));
+  }
+  
+  to {
+    margin-left: 0rem;
+  }
+}  
 
 
 .global-wrapper[data-is-root-path="true"] .bio {
@@ -358,31 +397,58 @@ button {
   margin: 1rem 1rem 0 1rem;
 }
 
-.blog-area {
+.post-container {
   padding: 1rem;
-  max-width: 30rem;
+  max-width: 60rem;
+  height: calc(100vh - var(--nav-height));
+  /* margin: 0 auto 0 auto; */
+  /* margin-left: calc(0rem + var(--side1-width) + var(--side2-width)); */
   background-color: var(--color-container);
+  border: solid 1px var(--color-border);
+}
+
+.post-list {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .post-list-item {
+
   margin-bottom: var(--spacing-8);
   margin-top: var(--spacing-8);
+  /* border: solid 1px var(--color-border); */
+  background-color: var(--color-container);
+
+}
+
+.post-list-item .tumbnail-area {
+  width: 10.5rem;
+  height: 10.5rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,.1), 0 10px 13px 0 rgba(0,0,0,.11);
+  margin-right: 1rem;
 }
 
 .post-list-item p {
+  
   margin-bottom: var(--spacing-0);
 }
 
 .post-list-item h2 {
-  font-size: var(--fontSize-4);
-  color: var(--color-heading);
-  margin-bottom: var(--spacing-2);
-  margin-top: var(--spacing-0);
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--color-text-sub);
+  margin: 1rem 0 0rem 0;
+
+}
+
+.post-list-item .date {
+  font-size: 0.7rem;
+  font-weight: 300;
 }
 
 .post-list-item header {
-  margin-bottom: var(--spacing-4);
-  /* margin: 0 2rem 0 2rem; */
+
 }
 
 .header-link-home {
@@ -412,6 +478,9 @@ button {
 article.blog-post  {
   padding: 2rem 2rem 0 2rem;    
   max-width: 50rem;
+  background-color: var(--color-container);
+  margin: 0 auto 0 auto;
+  min-height: 80vh;
 }
 
 .blog-post header h1 {
@@ -423,7 +492,10 @@ article.blog-post  {
   font-family: var(--font-heading);
 }
 nav.blog-post-nav {
+  max-width: 50rem;
   padding: 0 2rem 0 2rem;  
+  margin: 0 auto 0 auto;
+  background-color: var(--color-container);
 }
 .blog-post-nav ul {
   margin: var(--spacing-0);
