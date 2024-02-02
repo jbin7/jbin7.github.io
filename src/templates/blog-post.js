@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 
 
-import Layout from "../components/layout"
+import Layout from "../components/Bloglayout"
 import Seo from "../components/seo"
 
 const BlogPostTemplate = ({
@@ -13,7 +13,7 @@ const BlogPostTemplate = ({
 
   return (
     <Layout location={location} title={siteTitle}>
-      <div className="container">
+      <div>
         <article
           className="blog-post"
           itemScope
@@ -112,5 +112,25 @@ export const pageQuery = graphql`
         title
       }
     }
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+      nodes {
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+          description
+          thumbnail {
+            childImageSharp {
+              fixed(width: 200, height: 200) {
+                src
+              }
+            }
+          }          
+        }
+      }
+    }    
   }
 `

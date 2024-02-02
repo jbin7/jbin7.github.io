@@ -52,20 +52,10 @@ const Nav = ({ location, title, children }) => {
 
 
   useEffect(() => {
-    
-    const handleResize = ()=> {
-      if(window.innerWidth < 1200) {      
-        updateGlobalState({isOpenSidebar: false})   
-      } else {      
-        updateGlobalState({isOpenSidebar: true})   
-      }
-    }    
-    
 
-    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      
     }
   }, [])
 

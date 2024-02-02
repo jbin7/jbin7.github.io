@@ -16,9 +16,16 @@ const BlogIndex = (props) => {
               itemScope
               itemType="http://schema.org/Article"
             >
-              <div className="tumbnail-area">
+              <Link to={post.fields.slug} itemProp="url">
+                <div className="tumbnail-area">
+                  {post.frontmatter.thumbnail ? (
+                    <img className="thumbnail-image" src={post.frontmatter.thumbnail.childImageSharp.fixed.src} alt="thumbnail"/>
+                  ) : (
+                    <p></p>
+                  )}                
+                </div>
+              </Link>              
 
-              </div>
               <div className="title-area">
                 <header>
                   <h2>

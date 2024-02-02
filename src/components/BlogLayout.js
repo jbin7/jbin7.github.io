@@ -13,18 +13,29 @@ const Layout = ({ location, title, children }) => {
     document.documentElement.setAttribute('color-theme', osColorTheme)
   } else {
     document.documentElement.setAttribute('color-theme', localStorage.getItem('color-theme'))
-  }    
+  }  
 
   const { globalState, updateGlobalState } = useContext(GlobalStateContext);
 
 
   useEffect(() => {
-    updateGlobalState({isOpenSidebar: false, isSidebarTransition: false})   
+    updateGlobalState({isOpenSidebar: true, isSidebarTransition: false})   
+
+    const handleResize = ()=> {
+      if(window.innerWidth < 1200) {      
+        updateGlobalState({isOpenSidebar: false})   
+      } else {      
+        updateGlobalState({isOpenSidebar: true})   
+      }
+    }    
     
+
+    window.addEventListener('resize', handleResize);
+
     return () => {
-      
+      window.removeEventListener('resize', handleResize);
     }
-  }, [])    
+  }, [])  
 
 
   if (isRootPath) {
@@ -44,7 +55,12 @@ const Layout = ({ location, title, children }) => {
   return (
     <div>
       <Nav/>
-      <div className="global-wrapper" data-is-root-path={isRootPath}>
+      <div className={`blog-wrapper 
+        ${globalState.isOpenSidebar ? 'side-open' : 'side-close'}
+        ${globalState.isOpenSidebar && globalState.isSidebarTransition ? 'open-transition' : ''}
+        ${!globalState.isOpenSidebar && globalState.isSidebarTransition ? 'close-transition' : ''}
+        `}
+        data-is-root-path={isRootPath}>
         {/* <header className="global-header">{header}</header>    */}
         <main>{children}</main>
         {/* <footer></footer>      */}
