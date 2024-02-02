@@ -23,9 +23,9 @@ const Layout = ({ location, title, children }) => {
 
     const handleResize = ()=> {
       if(window.innerWidth < 1200) {      
-        updateGlobalState({isOpenSidebar: false})   
+        updateGlobalState({isOpenSidebar: false, isSidebarTransition: true})  
       } else {      
-        updateGlobalState({isOpenSidebar: true})   
+        updateGlobalState({isOpenSidebar: true, isSidebarTransition: true})  
       }
     }    
     

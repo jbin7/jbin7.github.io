@@ -412,25 +412,24 @@ button {
 }
 
 .post-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: flex;  
+  flex-wrap: wrap;  
 }
 
 .post-list-item {
-
+  width: 100%;
   margin-bottom: var(--spacing-8);
   margin-top: var(--spacing-8);
   /* border: solid 1px var(--color-border); */
   background-color: var(--color-container);
-
+  margin: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
 .post-list-item .tumbnail-area {
   width: 10.5rem;
   height: 10.5rem;
   border-radius: 4px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,.1), 0 10px 13px 0 rgba(0,0,0,.11);
-  margin-right: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,.1), 0 10px 13px 0 rgba(0,0,0,.11);  
 
   img {
     width: 10.5rem;

@@ -15,7 +15,7 @@ const Layout = ({ location, title, children }) => {
     document.documentElement.setAttribute('color-theme', localStorage.getItem('color-theme'))
   }    
 
-  const { globalState, updateGlobalState } = useContext(GlobalStateContext);
+  const { updateGlobalState } = useContext(GlobalStateContext);
 
 
   useEffect(() => {
