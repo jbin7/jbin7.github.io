@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import GlobalStateContext from './GlobalStateContext';
 
 const GlobalStateProvider = ({ children }) => {
-  console.log()
+  
   const [globalState, setGlobalState] = useState({
     // 초기 상태 값들
-    isOpenSidebar: window.innerWidth < 1200 ? false : true,
+    colorTheme: '',
+    isOpenSidebar: false,
     isSidebarTransition: false
   });
 

@@ -7,8 +7,7 @@ import GlobalStateContext from '../context/GlobalStateContext';
 import "./nav.scss"
 
 const Nav = ({ location, title, children }) => {
-
-  const [colorMode, setColorMode] = useState(localStorage.getItem('color-theme'))
+  
   const { globalState, updateGlobalState } = useContext(GlobalStateContext);
   const [isOpenMenu, setIsOpenMenu] = useState(false)
   const [isMenuTransition, setIsMenuTransition] = useState(false)
@@ -17,9 +16,10 @@ const Nav = ({ location, title, children }) => {
 
 
   const handleColor = () => {
-    if (colorMode === 'dark') {      
-      setColorMode('light')
-      localStorage.setItem('color-theme', 'light')
+    if (globalState.colorTheme === 'dark') {      
+      
+      updateGlobalState({colorTheme: 'light'})
+      localStorage.setItem('color-theme', 'light')      
       document.documentElement.setAttribute('color-theme', 'light')
       
       document.documentElement.classList.add('fadein')
@@ -27,7 +27,8 @@ const Nav = ({ location, title, children }) => {
         document.documentElement.classList.remove('fadein')
       },500)
     } else {      
-      setColorMode('dark')
+      
+      updateGlobalState({colorTheme: 'dark'})
       localStorage.setItem('color-theme', 'dark')
       document.documentElement.setAttribute('color-theme', 'dark')
 
@@ -51,8 +52,7 @@ const Nav = ({ location, title, children }) => {
 
 
 
-  useEffect(() => {
-
+  useEffect(() => {    
 
     return () => {
       
@@ -63,7 +63,7 @@ const Nav = ({ location, title, children }) => {
     <div className="nav-wrapper">
       <div className="nav-header">
         <div className="header-left">      
-            {colorMode === "dark" ? (
+            {globalState.colorTheme === "dark" ? (
               <button onClick={handleSidebar}>
                 <StaticImage className="menu-icon" src="../images/icons/menu_light_icon.svg" alt="icon"/>
               </button>      
@@ -83,7 +83,7 @@ const Nav = ({ location, title, children }) => {
 
 
         <div className='header-right'>
-          {colorMode === "dark" ? (
+          {globalState.colorTheme === "dark" ? (
             <button onClick={handleMenu}>
               <StaticImage className="menu-icon" src="../images/icons/menu_light_icon.svg" alt="icon"/>
             </button>      
@@ -139,7 +139,7 @@ const Nav = ({ location, title, children }) => {
           </ul>
           <div className='footer'>
 
-            {colorMode === "dark" ? (
+            {globalState.colorTheme === "dark" ? (
               <button className="color-mode-btn" onClick={handleColor}>
                 <StaticImage className="color-mode-icon" src="../images/icons/light_mode_icon.svg" alt="icon"/>
                 <span>라이트테마</span>

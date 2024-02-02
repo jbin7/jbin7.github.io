@@ -7,19 +7,29 @@ const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
 
-  if (localStorage.getItem('color-theme') == null) {
-    const osColorTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-    localStorage.setItem('color-theme', osColorTheme)
-    document.documentElement.setAttribute('color-theme', osColorTheme)
-  } else {
-    document.documentElement.setAttribute('color-theme', localStorage.getItem('color-theme'))
-  }  
+
 
   const { globalState, updateGlobalState } = useContext(GlobalStateContext);
 
 
   useEffect(() => {
-    updateGlobalState({isOpenSidebar: true, isSidebarTransition: false})   
+
+    if (localStorage.getItem('color-theme') == null) {
+      const osColorTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      localStorage.setItem('color-theme', osColorTheme)
+      document.documentElement.setAttribute('color-theme', osColorTheme)
+    } else {
+      document.documentElement.setAttribute('color-theme', localStorage.getItem('color-theme'))
+    }  
+
+    updateGlobalState({colorTheme: localStorage.getItem('color-theme')})
+
+    if (window.innerWidth < 1200) {
+      updateGlobalState({isOpenSidebar: false, isSidebarTransition: false})   
+    }else {
+      updateGlobalState({isOpenSidebar: true, isSidebarTransition: false})   
+    }
+    
 
     const handleResize = ()=> {
       if(window.innerWidth < 1200) {      

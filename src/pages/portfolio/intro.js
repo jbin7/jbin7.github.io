@@ -12,7 +12,7 @@ const Intro = () => {
   }, [])  
   
   return (
-    <div>
+    <div className='portfolio-intro'>
       intro
     </div>
   )
