@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_starter_blog=self.webpackChunkgatsby_starter_blog||[]).push([[133],{2501:function(t,e,s){s.r(e);var a=s(7294);e.default=()=>((0,a.useEffect)((()=>()=>{}),[]),a.createElement("div",{className:"portfolio-intro"},"intro"))}}]);
+//# sourceMappingURL=component---src-pages-portfolio-intro-js-b75d525b02b28b40c836.js.map
