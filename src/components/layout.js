@@ -19,11 +19,16 @@ const Layout = ({ location, title, children }) => {
       document.documentElement.setAttribute('color-theme', localStorage.getItem('color-theme'))
     }        
     
-    updateGlobalState({isOpenSidebar: false, isSidebarTransition: false})   
-    
+    updateGlobalState({
+      colorTheme: localStorage.getItem('color-theme'),
+      isOpenSidebar: false, 
+      isSidebarTransition: false
+    })       
+        
     return () => {
       
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])    
 
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 
@@ -50,28 +50,19 @@ const Nav = ({ location, title, children }) => {
   }  
 
 
-
-
-  useEffect(() => {    
-
-    return () => {
-      
-    }
-  }, [])
-
   return (
     <div className="nav-wrapper">
       <div className="nav-header">
         <div className="header-left">      
-            {globalState.colorTheme === "dark" ? (
-              <button onClick={handleSidebar}>
-                <StaticImage className="menu-icon" src="../images/icons/menu_light_icon.svg" alt="icon"/>
-              </button>      
-            ) : (
-              <button onClick={handleSidebar}>
-                <StaticImage className="menu-icon" src="../images/icons/menu_dark_icon.svg" alt="icon"/>
-              </button>     
-            )}                
+          {globalState.colorTheme === "dark" ? (
+            <button onClick={handleSidebar}>
+              <StaticImage className="menu-icon" src="../images/icons/menu_light_icon.svg" alt="icon"/>
+            </button>      
+          ) : (
+            <button onClick={handleSidebar}>
+              <StaticImage className="menu-icon" src="../images/icons/menu_dark_icon.svg" alt="icon"/>
+            </button>     
+          )}                
         </div>
 
         <div className='header-center'>

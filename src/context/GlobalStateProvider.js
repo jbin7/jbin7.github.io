@@ -18,6 +18,7 @@ const GlobalStateProvider = ({ children }) => {
     }));
   };
 
+  
   return (
     <GlobalStateContext.Provider
       value={{ globalState, updateGlobalState }}
