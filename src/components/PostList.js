@@ -21,7 +21,7 @@ const BlogIndex = (props) => {
                   {post.frontmatter.thumbnail ? (
                     <img className="thumbnail-image" src={post.frontmatter.thumbnail.childImageSharp.fixed.src} alt="thumbnail"/>
                   ) : (
-                    <p></p>
+                    <div>No-thumbnail</div>
                   )}                
                 </div>
               </Link>              

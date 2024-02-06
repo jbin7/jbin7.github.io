@@ -12,13 +12,11 @@ const BlogIndex = ({ data, location }) => {
 
   if (posts.length === 0) {
     return (
-      <Layout location={location} title={siteTitle}>        
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
-      </Layout>
+      <div className="post-container">
+        <div className="no-post">
+          <p>작성된 포스트가 없습니다.</p>
+        </div>          
+      </div>
     )
   }
 

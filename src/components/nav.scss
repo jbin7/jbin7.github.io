@@ -19,34 +19,51 @@
 
 
     .logo-text {
-      font-family: "Orbitron";
-      font-size: 1.2rem;
-      font-weight: 600;
-      display: flex; 
-      height: 100%;
-      position: relative;
-      color: var(--color-logo);         
-      font-style: italic;
-      text-shadow: 0px -1px var(--color-signature);
-    }
+        font-family: "Orbitron";
+        font-size: 1rem;
+        font-weight: 300;
+        font-style: italic;        
+        
+        -webkit-text-stroke: 1px #fff;
+        background: linear-gradient(0deg, #fff, #fff);
+        -webkit-background-clip: text;
+        color:transparent;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: 100% 100%;
+        transition: background-size 0.2s ease-in;
+        filter: drop-shadow(0 0 2px #de0303);
+    } 
+
+    // .logo-text {
+    //   font-family: "Orbitron";
+    //   font-size: 1.2rem;
+    //   font-weight: 600;
+    //   display: flex; 
+    //   height: 100%;
+    //   position: relative;
+    //   color: var(--color-logo);         
+    //   font-style: italic;
+    //   text-shadow: 0px -1px var(--color-signature);
+    // }
 
 
-    .logo-text::before, .logo-text::after {
-      content: attr(data-text);
-      position: absolute;
-      width: 100%;
+    // .logo-text::before, .logo-text::after {
+    //   content: attr(data-text);
+    //   position: absolute;
+    //   width: 100%;
       
-    }
+    // }
 
-    .logo-text::before {
-      left:1px;
-      text-shadow: 1px 1px #2a96d4;
-    }
+    // .logo-text::before {
+    //   left:1px;
+    //   text-shadow: 1px 1px #2a96d4;
+    // }
 
-    .logo-text::after {
-      left:-1px;
-      text-shadow: -1px 1px #cc2a1f;
-    }
+    // .logo-text::after {
+    //   left:-1px;
+    //   text-shadow: -1px 1px #cc2a1f;
+    // }
 
     .menu-icon {
       cursor: pointer;

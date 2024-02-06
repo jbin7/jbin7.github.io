@@ -5,7 +5,7 @@ const GlobalStateProvider = ({ children }) => {
   
   const [globalState, setGlobalState] = useState({
     // 초기 상태 값들
-    colorTheme: '',
+    colorTheme: 'dark',
     isOpenSidebar: false,
     isSidebarTransition: false
   });

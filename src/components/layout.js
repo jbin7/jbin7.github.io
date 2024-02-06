@@ -11,10 +11,9 @@ const Layout = ({ location, title, children }) => {
 
   useEffect(() => {
 
-    if (localStorage.getItem('color-theme') == null) {
-      const osColorTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-      localStorage.setItem('color-theme', osColorTheme)
-      document.documentElement.setAttribute('color-theme', osColorTheme)
+    if (localStorage.getItem('color-theme') == null) {      
+      localStorage.setItem('color-theme', 'dark')
+      document.documentElement.setAttribute('color-theme', 'dark')
     } else {
       document.documentElement.setAttribute('color-theme', localStorage.getItem('color-theme'))
     }        

@@ -6,6 +6,7 @@ import GlobalStateContext from '../context/GlobalStateContext';
 
 import "./nav.scss"
 
+
 const Nav = ({ location, title, children }) => {
   
   const { globalState, updateGlobalState } = useContext(GlobalStateContext);
