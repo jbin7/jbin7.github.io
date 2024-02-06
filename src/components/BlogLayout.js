@@ -47,13 +47,13 @@ const Layout = ({ location, title, children }) => {
 
   useEffect(() => {
     
-    if(globalState.isOpenSidebar == false && appWidth > 1200 ) {
+    if(globalState.isOpenSidebar === false && appWidth > 1200 ) {
       updateGlobalState({isOpenSidebar: true, isSidebarTransition: true}) 
       
-    }else if (globalState.isOpenSidebar == true && appWidth < 1200) {
+    }else if (globalState.isOpenSidebar === true && appWidth < 1200) {
       updateGlobalState({isOpenSidebar: false, isSidebarTransition: true}) 
     }
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [appWidth])    
 
 

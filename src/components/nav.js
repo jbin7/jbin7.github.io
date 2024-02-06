@@ -66,9 +66,10 @@ const Nav = ({ location, title, children }) => {
         </div>
 
         <div className='header-center'>
-          {/* <div className="title-text">Jbin</div> */}
+          
           <Link to="/">
-            <StaticImage className="logo-image" src="../images/gatsby-icon.png" alt="logo-image"/>
+            <div className="logo-text" data-text="Jbin">Jbin</div>
+            {/* <StaticImage className="logo-image" src="../images/gatsby-icon.png" alt="logo-image"/> */}
           </Link>
         </div>
 
@@ -164,14 +165,15 @@ const Nav = ({ location, title, children }) => {
         <nav>
           <ul>
             <li>
-              <Link to="/">Blog</Link>
+              <Link to="/" className={`${isOpenMenu ? 'top' : ''}`}>Blog</Link>
             </li>            
             <li>
-              <Link to="/portfolio">Portfolio</Link>
+              <Link to="/portfolio" className={`${isOpenMenu ? 'left' : ''}`}>Portfolio</Link>
             </li>
             <li>
-              <Link to="/resume">Resume</Link>
-            </li>            
+              <Link to="/resume" className={`${isOpenMenu ? 'right' : ''}`}>Resume</Link>
+            </li>          
+
           </ul>
         </nav>
       </div>    
