@@ -1,5 +1,5 @@
 ---
-title: neon-glow
+title: Neon-glow
 date: "2024-02-06"
 description: "neon-glow"
 category: css,
