@@ -130,7 +130,7 @@ const Index = ({ data, location }) => {
                   장학업무 통합관리 플랫폼,<br/>
                   장학금의 운영과 신청 선발 등의 장학 업무를 통괄하는 서비스
                 </p>
-                <h5>Tech Stack.</h5>
+                <h5>#Tech Stack.</h5>
                 <p>Django, Vue.js, jQuery, Gulp, Postgresql, AWS EC2, S3, Docker, nginX</p>
                 
               </div>
@@ -151,7 +151,7 @@ const Index = ({ data, location }) => {
                   시설의 상태를 나타내는 수치들을 모니터링하여<br/>
                   생산률 증진 및 시설 관리를 보조하는 시스템 
                 </p>
-                <h5>Tech Stack.</h5>
+                <h5>#Tech Stack.</h5>
                 <p>Spring, jQuery, Vue.js, Oracle, Apache Tomcat </p>      
 
                 <h4>정식품 베지밀 식품안전 플랫폼</h4>
@@ -159,7 +159,7 @@ const Index = ({ data, location }) => {
                   식품생산시 이물검사기 데이터를 기반으로<br/>
                   보조지표를 만들어 시각화해 보여주는 시스템
                 </p>
-                <h5>Tech Stack.</h5>
+                <h5>#Tech Stack.</h5>
                 <p>Spring, jQuery, Vue.js, Oracle, Apache Tomcat </p>
 
                 <h4>선진사료 설비종합효율 시스템</h4>
@@ -167,7 +167,7 @@ const Index = ({ data, location }) => {
                   생산설비의 가동률,불량률등을 계산하여<br/>
                   생산 설비의 효율 개선에 도움을 주는 시스템
                 </p>
-                <h5>Tech Stack.</h5>
+                <h5>#Tech Stack.</h5>
                 <p>Spring, jQuery, Vue.js, Oracle, Apache Tomcat </p>
 
                 <h4>선진사료 물류터미널 입출고 시스템</h4>
@@ -175,7 +175,7 @@ const Index = ({ data, location }) => {
                   물류센터의 입출고와 상하차를 보조하는 <br/>
                   키오스크와 바코드 스캐너 안드로이드 앱.
                 </p>
-                <h5>Tech Stack.</h5>
+                <h5>#Tech Stack.</h5>
                 <p>Spring, Vue.js, Cordova, Apache Tomcat </p>
 
               </div>

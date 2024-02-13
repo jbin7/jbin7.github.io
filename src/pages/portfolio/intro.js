@@ -1,7 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 
-import "./portfolio.scss"
-
 const Intro = () => {
 
   const myElementRef = useRef();
@@ -50,8 +48,9 @@ const Intro = () => {
     }
   }, [])  
   
+  const background = 'https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?q=80&w=3293&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   return (
-    <div className='portfolio-intro'>
+    <div className='portfolio-intro' style={{ backgroundImage: `url(${background})` }}>
       <h1 data-text="JbinPortfolio" ref={myElementRef}>JbinPortfolio</h1>
     </div>
   )

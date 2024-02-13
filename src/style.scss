@@ -144,13 +144,15 @@ html {
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Noto Sans KR', sans-serif;
   background-color: var(--color-background);
-  color: var(--color-text)
+  color: var(--color-text);
+  
 }
 
 body {
   font-family: 'pretendard', sans-serif;
   font-size: var(--fontSize-1);
-  color: var(--color-text)
+  color: var(--color-text);    
+  scroll-behavior: smooth;
 }
 
 .container {  
