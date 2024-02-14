@@ -97,7 +97,7 @@
   --color-text-sub: #999999;
   --color-heading: #000;
 
-  --color-header: rgba(255, 255, 255, 0.9);;
+  --color-header: rgba(255, 255, 255, 0.2);;
   --color-side-1: #F0F0F0;
   --color-side-2: #F7F7F8;  
 
@@ -152,7 +152,6 @@ body {
   font-family: 'pretendard', sans-serif;
   font-size: var(--fontSize-1);
   color: var(--color-text);    
-  scroll-behavior: smooth;
 }
 
 .container {  

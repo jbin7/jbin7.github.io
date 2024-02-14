@@ -1,8 +1,11 @@
 import React, { useEffect, useRef } from 'react';
+import image from '../../images/bg1.jpg'
 
 const Intro = () => {
 
-  const myElementRef = useRef();
+  const ref1 = useRef();
+  const ref2 = useRef();
+  const ref3 = useRef();
 
   useEffect(() => {
 
@@ -41,17 +44,24 @@ const Intro = () => {
 
     }
     
-    glitch(myElementRef.current)
+    glitch(ref1.current)
+    glitch(ref2.current)
+    glitch(ref3.current)
 
     return () => {
       
     }
   }, [])  
   
-  const background = 'https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?q=80&w=3293&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+  const background = image
   return (
     <div className='portfolio-intro' style={{ backgroundImage: `url(${background})` }}>
-      <h1 data-text="JbinPortfolio" ref={myElementRef}>JbinPortfolio</h1>
+      
+      <div className='text-area'>
+        <h1 data-text="WebApplication" ref={ref1}>WebApplication</h1>
+        <h1 data-text="Developer" ref={ref2}>Developer</h1>
+        <h1 data-text="Jbin" ref={ref3}>Jbin</h1>
+      </div>
     </div>
   )
 }

@@ -45,15 +45,7 @@ const PortfolioIndex = ({ data, location }) => {
         <section id="target">          
           <Profile/>
         </section>        
-
-        <section>          
-          <Intro/>
-        </section>        
-
-        <section>          
-          <Profile/>
-        </section>            
-
+       
 
       </div>
     </Layout>
