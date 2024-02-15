@@ -1,7 +1,5 @@
 import React from 'react';
 
-// import video from '../../videos/123123.mp4'
-
 
 const Profile = () => {
 
@@ -9,7 +7,7 @@ const Profile = () => {
   
   return (
     <div className='interactive-profile'>
-      
+      {/* <iframe src="https://glowing-sawine-7a9024.netlify.app/"></iframe> */}
     </div>
   )
 }

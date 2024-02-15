@@ -1,7 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../../components/BlogLayout"
+import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 
 import PostList from "../../components/PostList"
@@ -22,7 +22,8 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <div className="blog-area">
+      <div className="post-container">
+        <h3>All Posts</h3>
         <PostList posts={posts}/>
       </div>
     </Layout>
@@ -55,6 +56,13 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          thumbnail {
+            childImageSharp {
+              fixed(width: 200, height: 200) {
+                src
+              }
+            }
+          }          
         }
       }
     }

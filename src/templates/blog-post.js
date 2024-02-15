@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 
 
-import Layout from "../components/BlogLayout"
+import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const BlogPostTemplate = ({
@@ -13,7 +13,7 @@ const BlogPostTemplate = ({
 
   return (
     <Layout location={location} title={siteTitle}>
-      <div>
+      <div className="post-container">
         <article
           className="blog-post"
           itemScope

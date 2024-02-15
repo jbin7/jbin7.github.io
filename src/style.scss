@@ -406,10 +406,11 @@ button {
 
 .post-container {
   padding: 1rem;  
-  max-width: 60rem;
-  min-height: calc(100vh - var(--nav-height));
-  /* margin: 0 auto 0 auto; */
-  /* margin-left: calc(0rem + var(--side1-width) + var(--side2-width)); */
+  max-width: 80rem;
+  // min-height: calc(100vh - var(--nav-height));
+  min-height: 100vh;
+  margin: 0 auto 0 auto;
+  // margin-left: calc(0rem + var(--side1-width) + var(--side2-width));
   background-color: var(--color-container);
   border: solid 1px var(--color-border);
 }
@@ -424,7 +425,7 @@ button {
   margin-bottom: var(--spacing-8);
   margin-top: var(--spacing-8);
   /* border: solid 1px var(--color-border); */
-  background-color: var(--color-container);
+  
   margin: 0.5rem 0.5rem 0.5rem 0.5rem;
 
   a {
@@ -440,7 +441,7 @@ button {
   border-radius: 4px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,.1), 0 10px 13px 0 rgba(0,0,0,.11);  
   display: flex; align-items: center; justify-content: center;
-
+  background-color: var(--color-container);
   font-family: orbitron;
   img {
     width: 10.5rem;

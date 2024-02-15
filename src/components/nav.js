@@ -111,24 +111,22 @@ const Nav = ({ location, title, children }) => {
         <div className="side-2">
           <ul className='category-list'>
             <li>
-              <Link to="/"><h3>전체 글</h3></Link>
+              <Link to="/post"><h3>All Posts</h3></Link>
             </li>
             <li>
-              <div className='group-label'>category group1</div>
+              <div className='group-label'>group1</div>
               <ul>
-                <li><Link to="/">sub-category1</Link></li>
-                <li><Link to="/">sub-category2</Link></li>
+                <li><Link to="/post">category1</Link></li>
+                <li><Link to="/post">category2</Link></li>
               </ul>
-            </li>
+            </li>     
             <li>
-              <div className='group-label'>카테고리 그룹2</div>
+              <div className='group-label'>group2</div>
               <ul>
-                <li><Link to="/">서브-카테고리1</Link></li>
-                <li><Link to="/">서브-카테고리2</Link></li>
+                <li><Link to="/post">category1</Link></li>
+                <li><Link to="/post">category2</Link></li>
               </ul>
-            </li>   
-            <li>
-            </li>         
+            </li>               
           </ul>
           <div className='footer'>
 
@@ -166,7 +164,7 @@ const Nav = ({ location, title, children }) => {
         <nav>
           <ul>
             <li>
-              <Link to="/" className={`${isOpenMenu ? 'top' : ''}`}>Blog</Link>
+              <Link to="/post" className={`${isOpenMenu ? 'top' : ''}`}>Blog</Link>
             </li>            
             <li>
               <Link to="/portfolio" className={`${isOpenMenu ? 'left' : ''}`}>Portfolio</Link>
