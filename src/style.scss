@@ -97,7 +97,7 @@
   --color-text-sub: #999999;
   --color-heading: #000;
 
-  --color-header: rgba(255, 255, 255, 0.2);;
+  --color-header: rgba(255, 255, 255, 0.2);
   --color-side-1: #F0F0F0;
   --color-side-2: #F7F7F8;  
 
@@ -118,9 +118,9 @@
   --color-text-sub: #8E9297;
   --color-heading: #FFF;
 
-  --color-header: rgba(0, 0, 0, 0.3);;
-  --color-side-1: #171717;
-  --color-side-2: #1F2024;
+  --color-header: rgba(0, 0, 0, 0.3);
+  --color-side-1: rgba(0, 0, 0, 0.7);;
+  --color-side-2: rgba(0, 0, 0, 0.5);;
 
   --color-container: #28292D;
 
@@ -336,17 +336,15 @@ button {
   // padding-top: var(--nav-height);
 }
 
-.blog-wrapper {
-  /* margin: var(--spacing-0) auto; */
+.global-wrapper {  
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
-  /* padding: var(--spacing-10) var(--spacing-5); */
-  padding-top: var(--nav-height);
+  /* padding: var(--spacing-10) var(--spacing-5); */  
   background-color: var(--color-background);
 }
 
 @media ( min-width: 1080px ) { 
-  .blog-wrapper {    
+  .global-wrapper {    
 
     &.side-open {
       margin-left: calc(0rem + var(--side1-width) + var(--side2-width));
@@ -406,13 +404,14 @@ button {
 
 .post-container {
   padding: 1rem;  
-  max-width: 80rem;
-  // min-height: calc(100vh - var(--nav-height));
-  min-height: 100vh;
+  // max-width: 60rem;
+  min-height: calc(100vh - var(--nav-height));  
   margin: 0 auto 0 auto;
   // margin-left: calc(0rem + var(--side1-width) + var(--side2-width));
   background-color: var(--color-container);
   border: solid 1px var(--color-border);
+  position: relative;
+  top: var(--nav-height)
 }
 
 .post-list {

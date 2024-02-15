@@ -53,6 +53,7 @@ const Nav = ({ location, title, children }) => {
 
   return (
     <div className="nav-wrapper">
+      
       <div className="nav-header">
         <div className="header-left">      
           {globalState.colorTheme === "dark" ? (
@@ -85,10 +86,9 @@ const Nav = ({ location, title, children }) => {
               <StaticImage className="menu-icon" src="../images/icons/menu_dark_icon.svg" alt="icon"/>
             </button>     
           )}   
-        </div>
-
-     
+        </div>             
       </div>
+      
       <div className={`nav-sidebar
         ${globalState.isOpenSidebar ? 'open' : 'close'}        
         ${globalState.isOpenSidebar && globalState.isSidebarTransition ? 'open-transition' : ''}
@@ -153,7 +153,7 @@ const Nav = ({ location, title, children }) => {
                   
         </div>
         
-        {globalState.isOpenSidebar && <button onClick={handleSidebar} className='other'> </button>}
+        {globalState.isOpenSidebar && <div onClick={handleSidebar} className='other'> </div>}
       </div>
 
       <div className={`nav-menu         

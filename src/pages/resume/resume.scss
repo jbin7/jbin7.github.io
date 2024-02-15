@@ -6,6 +6,8 @@
   background-color: var(--color-container);
   border-right: solid 1px var(--color-border);
   border-left: solid 1px var(--color-border);
+  position: relative;
+  top: var(--nav-height);
   
   h1 {    
     margin-top: 0rem;
