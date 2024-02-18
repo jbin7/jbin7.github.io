@@ -28,6 +28,7 @@
         
         -webkit-text-stroke: 1px #fff;
         background: linear-gradient(0deg, #fff, #fff);
+        background-clip: text;
         -webkit-background-clip: text;
         color:transparent;
         background-repeat: no-repeat;

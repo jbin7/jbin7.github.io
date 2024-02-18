@@ -1,62 +1,194 @@
-.portfolio-intro {  
+.portfolio-intro {
   display: flex; align-items: center; justify-content: center;
   flex-direction: column;
-  height: 100vh;
-  background-color: #1f1f1f;
+  height: 100vh;  
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: 50%;
-  object-fit:contain;
-  overflow: hidden;
+  object-fit:cover;
+  overflow: hidden;   
+  
   
   .text-area {
     width: 100%;
-    height: 100%;
-    // padding: 1.5rem;
-    background-color: rgb(0, 0, 0, 0.5);
-    display: flex; align-items: center; justify-content: center;
+    height: 100%;    
+    background-color: rgb(0, 0, 0, 0.3);
+    display: flex; align-items: center; justify-content: flex-start;
     flex-direction: column;    
-    
+    padding: 10rem 0 15rem 0;
+    text-align: center;
   }
 
   h1 {
     margin: 0;
-    font-size: 5rem;
-    font-family: orbitron;
+    font-size: 4rem;
+    font-family: orbitron;    
     
     
     color: #fff;
     position: relative ;    
-    transform: skew(var(--skew));
+    // transform: skew(var(--skew));
     transform: skew(var(--skew)) scale(var(--scale));
+    filter: drop-shadow(0 0 2px rgb(255, 230, 68));    
   }
 
-  h1:before, h1::after {
-    
+
+  .showcase-btn {
+    position: relative;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgb(0, 0, 0, 0.1);
+    z-index: 10;
+    animation: showcase-up 1s ease-in;    
+  }
+
+  @keyframes showcase-up {
+    from {
+      top: 30%;
+      opacity: 0;
+    }
+    to {
+      top: 0%;
+      opacity:1;
+    }
+  }
+
+
+  h2 {
+    font-family: 'orbitron';
+    position: relative ;
+    margin: 0;    
+    font-size: 2rem;
+    color:#fff;
+    z-index: 100;
+  }
+
+  h2:before, h2::after {
     content: attr(data-text);
-    position: absolute;
-    transition: clip-path 50ms ease-in;
-    background-color: transparent;
+    position: absolute;    
+    background-color: transparent;      
+    
   }
-
-  h1::before {
-    left: 5px;
-    text-shadow: -2px 2px #cc2a1f;
-    clip-path: polygon(0 var(--t1), 100% var(--t1), 100% var(--b1), 0 var(--b1));
+  
+  
+  h2::before {
+    left: 0px;
+    text-shadow: -1px 1px #f71cb2;    
+  }    
+  
+  h2::after {
+    left: 0px;
+    text-shadow: 1px -1px #17aaf3;
   }  
-
-  h1::after {
-    left: -5px;
-    text-shadow: 2px -2px #2a96d4;
-    clip-path: polygon(0 var(--t2), 100% var(--t2), 100% var(--b2), 0 var(--b2));
-  }
 
 }
 
 
 @media ( max-width: 880px ) {
   .portfolio-intro {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;    
+    object-fit: contain;
     h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
   }
+}
+
+:root {
+	--black: oklch(17.7% 0.105 262.48);
+	--purple: oklch(60% 0.37 294.7);
+	--orange: oklch(60% 0.37 64.65);
+	--yellow: oklch(60% 0.37 109.08);
+	--blue: oklch(60% 0.37 237.06);
+	--black-alpha-50: color-mix(in oklch, var(--black), transparent);
+}
+
+@property --gradient-angle {
+	inherits: false;
+	initial-value: 0deg;
+	syntax: "<angle>";
+}
+
+@keyframes spin {
+	to {
+		--gradient-angle: 360deg;    
+	}
+}
+
+@keyframes beat {
+	to {
+		transform: scale(1.2);
+	}
+}
+
+
+.rainbow {
+  margin-top: 100px;
+  font-family: orbitron;
+	width: 200px;
+	height: 200px;
+  display: flex; align-items: center; justify-content: center;  
+  
+  
+	animation: spin 2s linear infinite ;
+  color: transparent;
+  // background-clip: text;
+	// background: linear-gradient(to bottom, #000, transparent) padding-box,
+	// 	conic-gradient(
+	// 			in oklch from var(--gradient-angle),
+	// 			var(--purple),
+	// 			var(--orange),
+	// 			var(--yellow),
+	// 			var(--blue),
+	// 			var(--purple)
+	// 		)
+	// 		border-box;
+	// border: 3px solid transparent;
+	border-radius: 8px;
+	position: relative;
+
+	z-index: 10;
+
+	&::before {
+		background: transparent;
+		border-radius: 8px;
+		content: "";
+		position: absolute;
+		inset: 0;
+		z-index: 5;
+	}
+
+	&::after {    
+		animation: spin 2s linear infinite;
+		background: conic-gradient(
+			in oklch from var(--gradient-angle),
+			var(--purple),
+			var(--orange),
+			var(--yellow),
+			var(--blue),
+			var(--purple)
+		);
+		border-radius: 15px;
+		content: "";
+		position: absolute;
+		inset: 0;
+		filter: blur(50px);
+		z-index: 1;
+	}
+
+
+
+}
+
+@media ( max-width: 880px ) {
+  // .rainbow {    
+  //   width: 180px;
+  //   height: 50px;
+  //   h2 {
+  //     font-size: 1rem;
+  //     color: #fff;
+  //   }
+  // }
 }

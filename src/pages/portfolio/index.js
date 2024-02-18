@@ -25,7 +25,8 @@ const PortfolioIndex = ({ data, location }) => {
           <Link to='/portfolio/#interactive_profile'></Link>     
           <Link to='/portfolio/#interactive_profile'></Link>          
         </div> */}
-        
+
+       
         
         <section id="target">          
           <Profile/>

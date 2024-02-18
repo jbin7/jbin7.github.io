@@ -77,7 +77,9 @@ const Layout = ({ location, title, children }) => {
         `}
         data-is-root-path={isRootPath}>
         {/* <header className="global-header">{header}</header>    */}
-        <main>{children}</main>
+
+        <main>{children}</main>    
+        
         {/* <footer></footer>      */}
       </div>
     </div>

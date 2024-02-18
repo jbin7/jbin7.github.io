@@ -11,8 +11,8 @@ module.exports = {
   siteMetadata: {
     title: `Jbin`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Jbin`,
+      summary: `Hi i'm wepapplication developer.`,
     },
     description: `웹 애플리케이션 개발자 Jbin의 블로그입니다.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,

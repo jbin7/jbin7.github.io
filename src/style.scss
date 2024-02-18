@@ -97,7 +97,7 @@
   --color-text-sub: #999999;
   --color-heading: #000;
 
-  --color-header: rgba(255, 255, 255, 0.2);
+  --color-header: rgba(255, 255, 255, 0.4);
   --color-side-1: #F0F0F0;
   --color-side-2: #F7F7F8;  
 
@@ -164,7 +164,7 @@ footer {
 }
 
 hr {
-  background-color: var(--color-signature);
+  background-color: var(--color-border);
   height: 1px;
   border: 0;
 }
@@ -409,7 +409,7 @@ button {
   margin: 0 auto 0 auto;
   // margin-left: calc(0rem + var(--side1-width) + var(--side2-width));
   background-color: var(--color-container);
-  border: solid 1px var(--color-border);
+  // border: solid 1px var(--color-border);
   position: relative;
   top: var(--nav-height)
 }
@@ -559,4 +559,40 @@ nav.blog-post-nav {
 
 img {
   max-width: 100%;
+}
+
+.white-screen {
+  position: absolute;  
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;    
+  &.turn-off {
+    animation: turn-off 0.6s ease-in-out;    
+  }  
+}
+
+.black-screen {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;  
+}
+
+.turn-off {
+  animation: turn-off 0.4s ease-in-out;    
+  animation-fill-mode: both;
+}
+
+@keyframes turn-off {
+	0% {
+		transform: scaleY(1) scaleX(1);    
+	}
+	
+	50% {
+		transform: scaleY(0.01) scaleX(1);    
+	}
+
+  100% {
+		transform: scaleY(0) scaleX(0);    
+  }
 }
