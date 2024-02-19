@@ -572,15 +572,21 @@ img {
 }
 
 .black-screen {
-  position: relative;
+  position: absolute;
   width: 100vw;
-  height: 100vh;
-  background-color: transparent;  
+  height: 100vh;  
+  background-color: black;
 }
 
 .turn-off {
   animation: turn-off 0.4s ease-in-out;    
   animation-fill-mode: both;
+}
+
+.turn-on {
+  animation: turn-off 0.4s ease-in-out;    
+  animation-fill-mode: both;
+  animation-direction: reverse;
 }
 
 @keyframes turn-off {

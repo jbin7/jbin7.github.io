@@ -2,7 +2,7 @@ import * as React from "react"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Intro from "../components/intro"
+import Intro from "../components/items/intro"
 
 
 const BlogIndex = ({ data, location }) => {

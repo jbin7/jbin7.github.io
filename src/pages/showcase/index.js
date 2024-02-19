@@ -2,19 +2,23 @@ import React, { useEffect } from 'react';
 
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
+import "./showcase.scss"
+
+import YouTubePlayer from "../../components/items/youtubePlayer"
+
 
 
 const ShowcaseIndex = ({ data, location }) => {
   
 
   useEffect(() => {    
-
+    
   }, [])   
   
   return (
-    <Layout location={location}>
-      <div>
-
+    <Layout location={location}>      
+      <div className='showcase turn-on'>
+        <YouTubePlayer/>
       </div>
     </Layout>
   )
