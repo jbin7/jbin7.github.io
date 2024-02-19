@@ -78,7 +78,7 @@
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
-  --color-primary: #ffbc00;
+  
   --color-text: #2e353f;
   --color-text-light: #4f5969;
   /* --color-heading: #1a202c; */
@@ -88,7 +88,8 @@
 
 
 :root[color-theme='light'] {
-  --color-signature: #ffbc00;
+  --color-primary: #000;
+  --color-signature: #ff004c;
 
   --color-background: #fff;
 
@@ -109,7 +110,8 @@
 }
 
 :root[color-theme='dark'] {
-  --color-signature: #ffbc00;
+  --color-primary: #fff;
+  --color-signature: #ff004c;
 
   --color-background: #303136;
 

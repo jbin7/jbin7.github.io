@@ -1,0 +1,11 @@
+.interactive-profile-container {
+  width: 100vw;
+  height: 100vh;
+  padding-top: var(--nav-height);
+  iframe {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0;
+    border: none;
+  }
+}

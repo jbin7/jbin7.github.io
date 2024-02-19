@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { navigate } from 'gatsby';
 
-import image from './bg2.jpg'
+import image from './bg1.jpg'
 
 import "./intro.scss"
 const Intro = (location) => {

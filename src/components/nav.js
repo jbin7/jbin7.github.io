@@ -97,13 +97,18 @@ const Nav = ({ location, title, children }) => {
         <nav className="side-1">
           <ul>         
             <li>
-              <a href="https://glowing-sawine-7a9024.netlify.app/" target="_blank" rel="noopener noreferrer">
-                <StaticImage className="profile-img" src="../images/jbin_interactive_profile.png" alt="Profile picture"/>
-              </a>
+              <Link to="/showcase/profile">
+                <StaticImage className="profile-img" src="../images/jbin_interactive_profile.png" alt="interactive-profile"/>
+              </Link>              
             </li>
             <li>
+              <Link to="/showcase/sonaplayer">
+              <StaticImage className="profile-img" src="../images/sonaEvolve.png" alt="sonaplayer"/>
+              </Link>
+            </li>            
+            <li>
               <a href="https://github.com/jbin7" target="_blank" rel="noopener noreferrer">
-                <StaticImage className="profile-img" src="../images/github.png" alt="Profile picture"/>
+                <StaticImage className="profile-img" src="../images/github-logo-1.jpg" alt="github"/>
               </a>
             </li>            
           </ul>
@@ -165,14 +170,17 @@ const Nav = ({ location, title, children }) => {
           <ul>
             <li>
               <Link to="/post" className={`${isOpenMenu ? 'top' : ''}`}>Blog</Link>
-            </li>            
+            </li>        
+            <li>
+              <Link to="/showcase" className={`${isOpenMenu ? 'bottom' : ''}`}>Showcase</Link>
+            </li>                      
             <li>
               <Link to="/portfolio" className={`${isOpenMenu ? 'left' : ''}`}>Portfolio</Link>
             </li>
             <li>
               <Link to="/resume" className={`${isOpenMenu ? 'right' : ''}`}>Resume</Link>
-            </li>          
-
+            </li>      
+            
           </ul>
         </nav>
       </div>    
