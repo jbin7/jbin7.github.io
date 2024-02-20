@@ -2,6 +2,7 @@ import React, { useEffect,useState } from 'react';
 import YouTube from 'react-youtube';
 
 import "./index.scss"
+import bg from './sona-bg.jpg'
 import kineticImg from './kinetic.jpg'
 import concussiveImg from './concussive.jpg'
 import etherealImg from './ethereal.jpg'
@@ -17,7 +18,8 @@ const Index = ({ data, location }) => {
       description: 'Kinetic',
       playerObj: '',
       coverImg: kineticImg,
-      isPlaying: false
+      isPlaying: false,
+      isReady: false,
     },
     {
       id: 'goHHknZJaIY',
@@ -25,7 +27,8 @@ const Index = ({ data, location }) => {
       description: 'Concussive',
       playerObj: '',
       coverImg: concussiveImg,
-      isPlaying: false
+      isPlaying: false,
+      isReady: false,
     },
     {
       id: 'GOgFsAejQ0o',
@@ -33,7 +36,8 @@ const Index = ({ data, location }) => {
       description: 'Ethereal',
       playerObj: '',
       coverImg: etherealImg,
-      isPlaying: false
+      isPlaying: false,
+      isReady: false,
     }        
   ]
   
@@ -88,7 +92,8 @@ const Index = ({ data, location }) => {
     // 동영상이 준비되었을 때 실행할 코드
     let obj = {
       ...item,
-      playerObj: event.target
+      playerObj: event.target,
+      isReady: true,
     }
     updatePlayList(item.id, obj)
   };
@@ -119,10 +124,10 @@ const Index = ({ data, location }) => {
   }, [])   
   
   return (
-    <div className='youtube-player-container'>
+    <div className='youtube-player-container' style={{ backgroundImage: `url(${bg})` }}>
         {playList.map((item, index) => (
           // 배열의 각 요소에 대해 새로운 컴포넌트 생성          
-          <article key={index} className={`player-wrapper ${item.isPlaying ? 'playing':''}`}>            
+          <article key={index} className={`player-wrapper ${item.isPlaying ? 'playing':''} ${item.isReady ? 'ready':''}`}>            
             <div className='player-cover' onClick={()=>{handleClick(item.id , item.isPlaying)}}>
               <div className='player-info'>
                 <h3>{item.name}</h3>
