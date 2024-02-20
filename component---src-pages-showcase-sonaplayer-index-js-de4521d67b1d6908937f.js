@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_starter_blog=self.webpackChunkgatsby_starter_blog||[]).push([[730],{5190:function(e,t,a){a.r(t),a.d(t,{Head:function(){return s}});var l=a(7294),n=a(4e3),r=a(9357),c=a(219);t.default=e=>{let{data:t,location:a}=e;return(0,l.useEffect)((()=>{}),[]),l.createElement(n.Z,{location:a},l.createElement(c.Z,null))};const s=()=>l.createElement(r.Z,{title:"DJ SONA player"})}}]);
+//# sourceMappingURL=component---src-pages-showcase-sonaplayer-index-js-de4521d67b1d6908937f.js.map
