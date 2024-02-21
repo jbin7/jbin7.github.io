@@ -62,7 +62,6 @@ const Index = ({ data, location }) => {
     if(isPlaying) {
       setPlayList((prevItems) => {
         return prevItems.map((item) => {
-          
           if (item.id === itemId) {
             item.playerObj.pauseVideo()
             return { ...item, isPlaying: false }
@@ -73,8 +72,7 @@ const Index = ({ data, location }) => {
       
     }else {
       setPlayList((prevItems) => {
-        return prevItems.map((item) => {
-          
+        return prevItems.map((item) => {        
           if (item.id === itemId) {
             item.playerObj.playVideo()
             return { ...item, isPlaying: true }
@@ -125,10 +123,13 @@ const Index = ({ data, location }) => {
   
   return (
     <div className='youtube-player-container' style={{ backgroundImage: `url(${bg})` }}>
-        {playList.map((item, index) => (
-          // 배열의 각 요소에 대해 새로운 컴포넌트 생성          
-          <article key={index} className={`player-wrapper ${item.isPlaying ? 'playing':''} ${item.isReady ? 'ready':''}`}>            
-            <div className='player-cover' onClick={()=>{handleClick(item.id , item.isPlaying)}}>
+        {playList.map((item, index) => (            
+          <article key={index} className={`player-wrapper ${item.isPlaying ? 'playing':'stop'} ${item.isReady ? 'ready':''}`}>            
+            <div className='player-cover' onClick={()=>{
+                if(item.isReady) {
+                  handleClick(item.id , item.isPlaying)
+                }
+              }}>
               <div className='player-info'>
                 <h3>{item.name}</h3>
                 <h4>{item.description}</h4>
