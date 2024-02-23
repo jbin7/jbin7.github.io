@@ -1,11 +1,9 @@
 .post-container {
-  padding: 1rem;  
-  // max-width: 60rem;
-  min-height: calc(100vh - var(--nav-height));  
+  padding: 1rem;    
+  min-height: calc(100vh - var(--nav-height)); 
+  max-height: 100vh; 
   margin: 0 auto 0 auto;
-  // margin-left: calc(0rem + var(--side1-width) + var(--side2-width));
-  background-color: var(--color-container);
-  // border: solid 1px var(--color-border);
+  background-color: var(--color-container);  
   position: relative;
   top: var(--nav-height)
   

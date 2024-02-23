@@ -14,10 +14,10 @@
   .text-area {
     width: 100%;
     height: 100%;    
-    background-color: rgb(0, 0, 0, 0.3);
+    background-color: rgb(0, 0, 0, 0.4);
     display: flex; align-items: center; justify-content: flex-start;
     flex-direction: column;    
-    padding: 10rem 0 15rem 0;
+    padding: 5rem 0 10rem 0;
     text-align: center;
   }
 
@@ -34,27 +34,6 @@
     filter: drop-shadow(1px 1px 4px rgb(var(--rgb1), var(--rgb2), var(--rgb3)));    
   }
 
-
-  .showcase-btn {
-    position: relative;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 8px;
-    // background-color: rgb(0, 0, 0, 0.1);
-    z-index: 10;
-    animation: showcase-up 1s ease-in;    
-  }
-
-  @keyframes showcase-up {
-    from {
-      top: 30%;
-      opacity: 0;
-    }
-    to {
-      top: 0%;
-      opacity:1;
-    }
-  }
 
 
   h2 {
@@ -89,7 +68,7 @@
 
 @media ( max-width: 880px ) {
   .portfolio-intro {
-    background-size: 100% 100%;
+    background-size: 200% 100%;
     background-repeat: no-repeat;    
     object-fit: contain;
     h1 {
@@ -125,9 +104,34 @@
 	}
 }
 
+.showcase-btn {
+  position: relative;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  // background-color: rgb(0, 0, 0, 0.1);
+  z-index: 10;
+  // animation: showcase-up 1s ease-in;    
+}
+
+@keyframes showcase-up {
+  from {
+    bottom: 40%;
+    opacity: 0;
+    
+  }
+  to {
+    bottom: 50%;
+    opacity:1;
+    
+  }
+}
+
 
 .rainbow {
-  margin-top: 100px;
+  position: absolute;
+  bottom: 50%;  
+
   font-family: orbitron;
 	width: 200px;
 	height: 100px;
@@ -135,6 +139,7 @@
   
   
 	animation: spin 2s linear infinite ;
+  animation: showcase-up 1s;
   color: transparent;
   // background-clip: text;
 	// background: linear-gradient(to bottom, #000, transparent) padding-box,
@@ -148,8 +153,7 @@
 	// 		)
 	// 		border-box;
 	// border: 3px solid transparent;
-	border-radius: 8px;
-	position: relative;
+	border-radius: 8px;	
 
 	z-index: 10;
 

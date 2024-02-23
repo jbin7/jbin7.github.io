@@ -22,21 +22,11 @@ const Nav = ({ location, title, children }) => {
       updateGlobalState({colorTheme: 'light'})
       localStorage.setItem('color-theme', 'light')      
       document.documentElement.setAttribute('color-theme', 'light')
-      
-      document.documentElement.classList.add('fadein')
-      window.setTimeout(()=> {
-        document.documentElement.classList.remove('fadein')
-      },500)
     } else {      
       
       updateGlobalState({colorTheme: 'dark'})
       localStorage.setItem('color-theme', 'dark')
-      document.documentElement.setAttribute('color-theme', 'dark')
-
-      document.documentElement.classList.add('fadein')
-      window.setTimeout(()=> {
-        document.documentElement.classList.remove('fadein')
-      },500)      
+      document.documentElement.setAttribute('color-theme', 'dark')   
     }
     
   }
@@ -138,13 +128,13 @@ const Nav = ({ location, title, children }) => {
             {globalState.colorTheme === "dark" ? (
               <button className="color-mode-btn" onClick={handleColor}>
                 <StaticImage className="color-mode-icon" src="../images/icons/light_mode_icon.svg" alt="icon"/>
-                <span>라이트테마</span>
+                <span>라이트모드</span>
               </button>
                
             ) : (
               <button className="color-mode-btn" onClick={handleColor}>
                 <StaticImage className="color-mode-icon" src="../images/icons/dark_mode_icon.svg" alt="icon"/>
-                <span>다크테마</span>
+                <span>다크모드</span>
               </button>
             )}            
             <hr/>
