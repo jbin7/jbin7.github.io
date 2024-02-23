@@ -53,6 +53,7 @@
       margin-bottom: 0px;
       font-style: italic;
       color: #f2f2f2;
+      transition: none;   
     }
 
     .cover-img {
@@ -60,7 +61,8 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      z-index: 9;
+      z-index: 9;      
+      transition: none;
     }
   
     .app-player {    
@@ -84,7 +86,7 @@
   .player-wrapper.playing {
 
     position: absolute;
-    animation: do-play 0.5s;
+    animation: do-play 1s;
     animation-fill-mode: both;
     z-index: 19;
     margin-left: 0%;
@@ -97,7 +99,12 @@
 
     .cover-img {
       opacity: 0;
+      transition: all 1s ease-in-out;
     }    
+
+    h3,h4 {
+      transition: all 1s ease-in-out;
+    }
 
     h3 {
       font-size: 6rem;
@@ -121,6 +128,12 @@
   @keyframes do-play {
     0% {
       
+    }
+
+    30% {
+      width: 200px;
+      height: 300px; 
+      bottom: 40%;
     }
 
     100% {      
@@ -172,7 +185,7 @@
 
     .player-wrapper.playing {
       position: absolute;
-      animation: do-play 0.5s;
+      animation: do-play 1s;
       animation-fill-mode: forwards;
       z-index: 19;
   
