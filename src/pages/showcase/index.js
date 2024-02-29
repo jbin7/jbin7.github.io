@@ -4,7 +4,6 @@ import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import "./showcase.scss"
 
-import YouTubePlayer from "../../components/apps/youtubePlayer"
 
 
 
@@ -18,7 +17,7 @@ const ShowcaseIndex = ({ data, location }) => {
   return (
     <Layout location={location}>      
       <div className='showcase turn-on'>
-        <YouTubePlayer/>
+        
       </div>
     </Layout>
   )

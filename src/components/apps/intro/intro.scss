@@ -68,7 +68,7 @@
 
 @media ( max-width: 880px ) {
   .portfolio-intro {
-    background-size: 200% 100%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;    
     object-fit: contain;
     h1 {
@@ -129,8 +129,7 @@
 
 
 .rainbow {
-  position: absolute;
-  bottom: 50%;  
+  position: absolute;  
 
   font-family: orbitron;
 	width: 200px;
@@ -140,6 +139,7 @@
   
 	animation: spin 2s linear infinite ;
   animation: showcase-up 1s;
+  animation-fill-mode: forwards;
   color: transparent;
   // background-clip: text;
 	// background: linear-gradient(to bottom, #000, transparent) padding-box,

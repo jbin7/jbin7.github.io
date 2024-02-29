@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { navigate } from 'gatsby';
 
-import image from './intro_bg.jpg'
+import image from './bg1.jpg'
 
 import "./intro.scss"
 const Intro = (location) => {
@@ -91,7 +91,7 @@ const Intro = (location) => {
 
           <div className='rainbow'>
             <button className='showcase-btn' onClick={handleClick}>
-                <h2 data-text="Showcase">Showcase</h2>      
+                <h2 data-text="Touch Me">Touch Me</h2>      
             </button>
           </div>     
 

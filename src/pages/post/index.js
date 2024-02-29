@@ -23,8 +23,10 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <div className="post-container">
-        <h3>All Posts</h3>
-        <PostList posts={posts}/>
+        <main>
+          <h3>All Posts</h3>
+          <PostList posts={posts}/>          
+        </main>
       </div>
     </Layout>
   )

@@ -1,11 +1,12 @@
-.post-container {
-  padding: 1rem;    
+.post-container {  
   min-height: calc(100vh - var(--nav-height)); 
   max-height: 100vh; 
   margin: 0 auto 0 auto;
-  background-color: var(--color-container);  
-  position: relative;
-  top: var(--nav-height)
+  padding-top: var(--nav-height);
+
+  main {
+    padding: 1rem;
+  }
   
 }
 
@@ -30,7 +31,7 @@
   width: 10.5rem;
   height: 10.5rem;
   border-radius: 4px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,.1), 0 10px 13px 0 rgba(0,0,0,.11);  
+  box-shadow: 2px 5px 8px 0 rgba(0,0,0,.1), 3px 10px 13px 0 rgba(0,0,0,.13);  
   display: flex; align-items: center; justify-content: center;
   background-color: var(--color-container);
   font-family: orbitron;
@@ -93,9 +94,11 @@
 }
 
 article.blog-post  {   
-  max-width: 50rem;
-  background-color: var(--color-container);  
+  padding: 2rem 3rem 2rem 3rem;  
+  max-width: 56rem;
   min-height: 80vh;
+  margin: 0 auto 0 auto;
+  background-color: var(--color-container);
 }
 
 .blog-post header h1 {
@@ -107,8 +110,10 @@ article.blog-post  {
   font-family: var(--font-heading);
 }
 nav.blog-post-nav {
-  max-width: 50rem;
+  padding: 1rem;  
+  max-width: 56rem;
   background-color: var(--color-container);
+  margin: 0 auto 0 auto;
 }
 .blog-post-nav ul {
   margin: var(--spacing-0);
@@ -116,4 +121,11 @@ nav.blog-post-nav {
 
 .gatsby-highlight {
   margin-bottom: var(--spacing-8);
+}
+
+
+@media ( max-width: 1080px ) {
+  article.blog-post  {   
+    padding: 1rem;
+  }
 }
