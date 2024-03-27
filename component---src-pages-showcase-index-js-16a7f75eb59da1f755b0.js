@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_starter_blog=self.webpackChunkgatsby_starter_blog||[]).push([[562],{6530:function(e,t,a){a.r(t),a.d(t,{Head:function(){return r}});var n=a(7294),s=a(4e3),c=a(431);t.default=e=>{let{data:t,location:a}=e;return(0,n.useEffect)((()=>{}),[]),n.createElement(s.Z,{location:a},n.createElement("div",{className:"showcase turn-on"}))};const r=()=>n.createElement(c.Z,{title:"Showcase"})}}]);
+//# sourceMappingURL=component---src-pages-showcase-index-js-16a7f75eb59da1f755b0.js.map
