@@ -12,11 +12,16 @@ const BlogIndex = ({ data, location }) => {
 
   if (posts.length === 0) {
     return (
+
+      <Layout location={location} title={siteTitle}>
       <div className="post-container">
-        <div className="no-post">
-          <p>작성된 포스트가 없습니다.</p>
-        </div>          
+        <main>
+          <div className="no-post">
+            <p>No posts have been created.</p>
+          </div>       
+        </main>
       </div>
+      </Layout>      
     )
   }
 

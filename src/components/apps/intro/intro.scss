@@ -68,9 +68,9 @@
 
 @media ( max-width: 880px ) {
   .portfolio-intro {
-    background-size: 100% 100%;
-    background-repeat: no-repeat;    
-    object-fit: contain;
+    background-size: 100% 100%;    
+    // background-size: cover;
+    background-repeat: no-repeat;        
     h1 {
       font-size: 2rem;
     }
@@ -189,12 +189,10 @@
 }
 
 @media ( max-width: 880px ) {
-  // .rainbow {    
-  //   width: 180px;
-  //   height: 50px;
-  //   h2 {
-  //     font-size: 1rem;
-  //     color: #fff;
-  //   }
-  // }
+  .rainbow {    
+
+    h2 {
+      font-size: 1.5rem;      
+    }
+  }
 }

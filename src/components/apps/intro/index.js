@@ -17,7 +17,7 @@ const Intro = (location) => {
   const handleClick = () => {
     setsTurnOff(true)
     window.setTimeout(()=> {
-      navigate('/showcase');
+      navigate('/showcase/profile');
     }, 400)
   };  
 
@@ -91,7 +91,7 @@ const Intro = (location) => {
 
           <div className='rainbow'>
             <button className='showcase-btn' onClick={handleClick}>
-                <h2 data-text="Touch Me">Touch Me</h2>      
+                <h2 data-text="PROFILE">PROFILE</h2>      
             </button>
           </div>     
 

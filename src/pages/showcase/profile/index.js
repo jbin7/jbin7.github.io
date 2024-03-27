@@ -15,7 +15,7 @@ const Index = ({ data, location }) => {
   
   return (
     <Layout location={location}>
-      <div className='interactive-profile-container'>
+      <div className='interactive-profile-container'>        
         <iframe title="interactive-profile" src="https://glowing-sawine-7a9024.netlify.app/" width="100%"height="100%"></iframe>
       </div>        
     </Layout>
