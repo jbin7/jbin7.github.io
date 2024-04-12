@@ -29,7 +29,8 @@ const Index = ({ data, location }) => {
           <div></div>          
         ) : (
           <div className='loading-text'>
-          loading..
+            페이지를 로드중입니다.<br/>
+            잠시만 기다려 주세요
           </div>          
         )}
 
