@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Layout from "../../../components/layout"
 import Seo from "../../../components/seo"
-import "./index.scss"
+import "./profile.scss"
 
 
 
@@ -30,7 +30,7 @@ const Index = ({ data, location }) => {
         ) : (
           <div className='loading-text'>
             페이지를 로드중입니다.<br/>
-            잠시만 기다려 주세요
+            잠시만 기다려 주세요.
           </div>          
         )}
 
