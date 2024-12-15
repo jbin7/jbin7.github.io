@@ -2,6 +2,8 @@
   Jbin blog & portfolio
 </h1>
 
+node 18
+
 ## Project Setup
 
 ```shell
